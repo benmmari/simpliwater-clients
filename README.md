@@ -1,4 +1,4 @@
-# SimpliWater Simpliwater front end clients
+# Simpliwater front end clients
 
 Unlock The Block Hackathon 2018: Tokenized Water: Solving the Water Crisis
 This project contains the logic for the clients of the SimpliWaterToken Contract
