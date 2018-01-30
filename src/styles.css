@@ -1,0 +1,23 @@
+.has-underline {
+  text-decoration: underline;
+}
+
+
+.proceed {
+  height: 50px;
+  width: 352px;
+  border-radius: 30px;
+  font-size: 25px;
+  background-color: #55DAE1;
+  border-width: 3px;
+  border-color: white !important;
+}
+
+
+.overall-container {
+  background-image: url("assets/login-back.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding: 20px;
+  height: 100%;
+}
