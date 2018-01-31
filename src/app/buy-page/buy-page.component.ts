@@ -64,8 +64,6 @@ export class BuyPageComponent implements OnInit {
 
 
   topUpWithEth() {
-
-    let tokens = this.calculationService.calculateTokens(this.amountRands);
     console.log(this.simpliwaterService.getAdminAccount());
     let meta;
     this.simpliwaterService.getSimpliWaterContract()
@@ -77,7 +75,7 @@ export class BuyPageComponent implements OnInit {
       .then(() => {
         //for now if there are no errors go to the success page
         console.log("sent transaction");
-        this.router.navigate(["sent/", this.meterAddress], {queryParams:{rands: this.amountRands, eth:this.calculatedEth, tokens:tokens}});
+        this.router.navigate(["sent/", this.meterAddress]);
       })
       .catch(e => {
         console.log(e);
