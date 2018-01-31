@@ -13,6 +13,7 @@ export class CalculationService {
   days;
   allowed;
   used;
+  transactionFigures = {};
 
   constructor(private simpliwaterService: SimpliwaterService) {}
 
@@ -50,10 +51,11 @@ export class CalculationService {
     console.log(this.normalPricePerLiter, this.penaltyPricePerLiter, this.dailyLimit, this.days, this.allowed, this.used);
   }
 
-
+  getTransactionFigures() {
+    return this.transactionFigures;
+  }
 
   calculateTokens = (amount: number) => {
-    amount = amount;
     this.setVariables();
     let value = 0;
     //If they have used more than what they were recommended to use
@@ -64,6 +66,12 @@ export class CalculationService {
       //If they are still within their limits
       value = (amount / this.normalPricePerLiter);
     }
+
+    this.transactionFigures = {
+      litres: value,
+      rands: amount,
+      eth: this.calculateETH(amount)
+    };
 
     return (value) ? value.toFixed(0) : 0;
   }

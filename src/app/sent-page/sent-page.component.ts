@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CalculationService } from '../calculation.service';
+
 import {
   Router,
   NavigationExtras
@@ -12,13 +14,18 @@ import {
 })
 export class SentPageComponent implements OnInit {
 
-  litres: any;
+  litres;
   randAmount;
   ETHAmount;
 
-  constructor(public router: Router,) {}
+  constructor(public router: Router, private calculationService: CalculationService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.litres = this.calculationService.getTransactionFigures()['litres'];
+    this.randAmount = this.calculationService.getTransactionFigures()['rands'];
+    this.ETHAmount = this.calculationService.getTransactionFigures()['eth'];
+    console.log(this.calculationService.getTransactionFigures());
+  }
 
   done() {
     this.router.navigate(["meter/"]);

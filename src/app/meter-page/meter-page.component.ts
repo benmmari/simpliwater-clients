@@ -88,7 +88,7 @@ export class MeterPageComponent implements OnInit {
         this.simpliwaterService.setUtilityConstants(this.utilityConstants[0], this.utilityConstants[1], this.utilityConstants[2]);
         this.navAddress = this.meterAddress;
         this.meterAddress = "";
-        this.router.navigate(["stats/" + this.navAddress]);
+        this.router.navigate(["stats/", this.navAddress]);
       })
       .catch(e => {
         console.log(e);
