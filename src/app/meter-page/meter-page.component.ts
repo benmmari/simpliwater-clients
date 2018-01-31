@@ -18,6 +18,7 @@ export class MeterPageComponent implements OnInit {
   utilityConstants: any;
 
   meterAddress: string;
+  navAddress: string;
 
   constructor(public router: Router, private simpliwaterService: SimpliwaterService) {}
 
@@ -25,6 +26,7 @@ export class MeterPageComponent implements OnInit {
     this.simpliwaterService.contractReady.subscribe(
       () => {
         console.log("ready");
+        //use this to register meters for now, while still working on the admin portal
         //this.registerMeter();
       });
   }
@@ -50,6 +52,7 @@ export class MeterPageComponent implements OnInit {
 
 
   getMeterStats = () => {
+    this.navAddress = "";
     console.log(this.simpliwaterService.getAdminAccount());
     let meta;
     this.simpliwaterService.getSimpliWaterContract()
@@ -83,7 +86,9 @@ export class MeterPageComponent implements OnInit {
         this.utilityConstants = value;
         console.log(this.utilityConstants);
         this.simpliwaterService.setUtilityConstants(this.utilityConstants[0], this.utilityConstants[1], this.utilityConstants[2]);
-        this.router.navigate(["stats/" + this.meterAddress]);
+        this.navAddress = this.meterAddress;
+        this.meterAddress = "";
+        this.router.navigate(["stats/" + this.navAddress]);
       })
       .catch(e => {
         console.log(e);

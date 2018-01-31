@@ -15,8 +15,7 @@ export class SimpliwaterService {
   accounts: any;
   admin_account: any;
   meter_account: any;
-  user_1_account: any;
-  user_2_account: any;
+
   insantiated: boolean;
   emitted: boolean;
   contractReady = new EventEmitter();
@@ -110,11 +109,9 @@ export class SimpliwaterService {
       this.accounts = accs;
       this.admin_account = this.accounts[0];
       this.meter_account = "0xF719866EC4a89465b1255d11fD4Ea73C07846759";
-      this.user_1_account = "0xf17f52151EbEF6C7334FAD080c5704D77216b732";
       console.log("accounts: ", this.accounts);
       console.log("admin: ", this.admin_account);
       console.log("meter: ", this.meter_account);
-      console.log("user: ", this.user_1_account);
       this.contractReady.emit();
       this.emitted = true;
     });

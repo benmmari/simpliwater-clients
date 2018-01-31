@@ -3,7 +3,7 @@
   width: 352px;
   border-radius: 30px;
   font-size: 25px;
-  background-color: #55DAE1;
+  background-color: #55DAE1 !important;
   border-width: 3px;
   border-color: white !important;
   color: white;

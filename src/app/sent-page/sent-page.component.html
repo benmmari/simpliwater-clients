@@ -1,0 +1,29 @@
+<div class="container-sent">
+<div style="margin-top:20px;">
+  <h1 class="title is-1" style="text-align: center;color:#55DAE1 !important;font-size: 40px !important;">
+        Transaction Complete!
+      </h1>
+</div>
+<div style="display:flex;justify-content:center">
+  <img style="width:200px;height: 200px;margin-top: 50px;" src="../assets/success.svg">
+</div>
+<div style="text-align:center">
+<div>{{litres}}L</div>
+<div>at</div>
+<div style="display:flex;flex-direction:row;">
+</div>
+<div></div>
+</div>
+<div style="display: flex;flex-direction: row;justify-content:center;width:100%">
+  <div style="float:left;justify-content: center;display: flex;width:50%">
+    <button class="button sent-buttons done" (click)="done()">
+      DONE
+    </button>
+  </div>
+  <div style="float:right;justify-content: center;display: flex;width:50%">
+    <button class="button  sent-buttons buy" (click)="more()">
+      BUY MORE
+    </button>
+  </div>
+</div>
+</div>

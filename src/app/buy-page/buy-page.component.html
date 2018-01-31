@@ -20,14 +20,17 @@
       <div style="padding:10px 10px 1px 10px;display:flex;flex-direction:row;">
         <img style="width: 30px !important;height: 30px !important;" src="../assets/arrows.png" />
         <div style="text-align: center;width:100%">
-          <div *ngIf="calculateETH() > 0" class="conversin-eth-text">{{calculateETH().toFixed(18)}} ETH</div>
-        <div *ngIf="calculateETH() == 0" style="text-align: center;width:100%">
-          <div class="conversin-eth-text">0.0 ETH</div>
+          <div *ngIf="calculationService.calculateETH(amountRands) > 0" class="conversin-eth-text">{{calculationService.calculateETH(amountRands).toFixed(18)}} ETH</div>
+          <div *ngIf="calculationService.calculateETH(amountRands) == 0" style="text-align: center;width:100%">
+            <div class="conversin-eth-text">0.0 ETH</div>
+          </div>
         </div>
       </div>
     </div>
+    <div style="text-align: center;">
+      <div class="conversion-litre-text">{{calculatedTokens}}L </div>
     </div>
-    <div class="field is-grouped" style="display: flex;justify-content: center;margin-top: 50px;">
+    <div class="field is-grouped" style="display: flex;justify-content: center;margin-top: 50px;" (click)="topUpWithEth()">
       <p class="control">
         <button class="button proceed">
           BUY

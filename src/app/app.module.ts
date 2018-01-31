@@ -4,23 +4,23 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
-// import { Router, Event, NavigationStart, NavigationEnd, NavigationError, NavigationCancel } from '@angular/router';
 
 import { HomePageComponent } from './home-page/home-page.component';
 import { MeterPageComponent } from './meter-page/meter-page.component';
 import { SimpliwaterService } from './simpliwater.service';
+import { CalculationService } from './calculation.service';
 import { BuyPageComponent } from './buy-page/buy-page.component';
+import { SentPageComponent } from './sent-page/sent-page.component';
 
 const appRoutes: Routes = [
   { path: 'meter', component: MeterPageComponent },
-    { path: 'buy', component: BuyPageComponent },
+  { path: 'buy', component: BuyPageComponent },
   { path: 'stats/:id', component: HomePageComponent },
   {
     path: '',
     redirectTo: '/meter',
     pathMatch: 'full'
-  },
-  // { path: '**', component: PageNotFoundComponent }
+  }, { path: 'sent/:id', component: SentPageComponent }
 ];
 
 
@@ -37,9 +37,10 @@ const appRoutes: Routes = [
     AppComponent,
     HomePageComponent,
     MeterPageComponent,
-    BuyPageComponent
+    BuyPageComponent,
+    SentPageComponent
   ],
-  providers: [SimpliwaterService],
+  providers: [SimpliwaterService, CalculationService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

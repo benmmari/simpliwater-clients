@@ -1,5 +1,7 @@
 import { Component, OnInit, NgZone } from '@angular/core';
 import { SimpliwaterService } from '../simpliwater.service';
+import { CalculationService } from '../calculation.service';
+
 import {
   Router,
   NavigationExtras
@@ -17,7 +19,7 @@ export class HomePageComponent implements OnInit {
   utilityStats: any;
   dailyLimit: number;
 
-  constructor(private _ngZone: NgZone, public router: Router, private simpliwaterService: SimpliwaterService) {}
+  constructor(private _ngZone: NgZone, public router: Router, private simpliwaterService: SimpliwaterService, private calculationService: CalculationService) {}
 
   ngOnInit() {
     this.meterStats = this.simpliwaterService.getMeterStats();
@@ -32,17 +34,6 @@ export class HomePageComponent implements OnInit {
           this.utilityStats = this.simpliwaterService.getUtilityConstants();
         });
     }
-  }
-
-  howManyDays() {
-    let currentTime = Date.now();
-    let meterEpochTime = this.meterStats.registrationEpoch;
-    console.log("days", (currentTime - meterEpochTime) / 86400000);
-    return (currentTime - meterEpochTime) / 86400000;
-  }
-
-  usagePerDay() {
-    return this.utilityStats.usage > 0 ? this.utilityStats.usage/this.howManyDays() : 0;
   }
 
   buyTokens() {
