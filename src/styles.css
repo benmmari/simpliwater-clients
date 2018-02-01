@@ -4,8 +4,11 @@
   border-radius: 30px;
   font-size: 25px;
   background-color: #55DAE1 !important;
-  border-width: 3px;
-  border-color: white !important;
+  border-color: #55DAE1 !important;
   color: white;
   font-weight:bold;
+
+   -webkit-box-shadow: 11px 11px 28px -8px #55DAE1 ;
+-moz-box-shadow: 11px 11px 28px -8px #55DAE1 ;
+box-shadow: 11px 11px 28px -8px #55DAE1 ;
 }

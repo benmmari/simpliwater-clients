@@ -10,3 +10,11 @@
   height: 100%;
   min-height:100vh;
 }
+
+.button.proceed {
+	border-color: white;
+}
+
+input::placeholder {
+	color: #C6C6C6;
+}
