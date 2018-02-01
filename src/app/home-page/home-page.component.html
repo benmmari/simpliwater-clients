@@ -17,14 +17,10 @@
         <div class="usage">daily avg</div>
       </div>
       <div class="column">Restrictions
-        <div class="usage">{{((utilityStats.dailyLimit/1000)).toFixed(0)}}L</div>
+        <div class="usage" style="color:red !important">{{((utilityStats.dailyLimit/1000) * meterStats.occupants).toFixed(0)}}L</div>
         <div class="usage">daily</div>
       </div>
     </div>
-    <!--div class="row">
-      <div class="column"><div class="squareBase type3"></div></div>
-      <div class="column circleBase type3"></div>
-    </div-->
   </div>
   <div style="height:100%" class="field is-grouped" style="display: flex;justify-content: center;" (click)="buyTokens()">
     <p class="control">
