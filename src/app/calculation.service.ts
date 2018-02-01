@@ -4,7 +4,7 @@ import { SimpliwaterService } from './simpliwater.service';
 @Injectable()
 export class CalculationService {
 
-  //TODO: get the live exchange rate via an API;
+  //TODO: get the live exchange rate via an API; in future
 
   RAND_ETH_EXCHANGE_RATE = 12000;
   normalPricePerLiter;

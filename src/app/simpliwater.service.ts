@@ -131,30 +131,4 @@ export class SimpliwaterService {
   setProvider() {
     this.SimpliWaterContract.setProvider(this.web3.currentProvider);
   }
-
-  // sendCoin = () => {
-  //   const amount = this.sendingAmount;
-  //   const receiver = this.meterAddress;
-  //   let meta;
-
-  //   this.setStatus('Initiating transaction... (please wait)');
-
-  //   this.SimpliWaterContract
-  //     .deployed()
-  //     .then(instance => {
-  //       meta = instance;
-  //       return meta.sendCoin(receiver, amount, {
-  //         from: this.account
-  //       });
-  //     })
-  //     .then(() => {
-  //       this.setStatus('Transaction complete!');
-  //       this.refreshBalance();
-  //     })
-  //     .catch(e => {
-  //       console.log(e);
-  //       this.setStatus('Error sending coin; see log.');
-  //     });
-  // };
-
 }

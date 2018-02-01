@@ -11,8 +11,10 @@ import { SimpliwaterService } from './simpliwater.service';
 import { CalculationService } from './calculation.service';
 import { BuyPageComponent } from './buy-page/buy-page.component';
 import { SentPageComponent } from './sent-page/sent-page.component';
+import { MeterSimulationComponent } from './meter-simulation/meter-simulation.component';
 
 const appRoutes: Routes = [
+  { path: 'meter-simlulation/:id', component: MeterSimulationComponent },
   { path: 'meter', component: MeterPageComponent },
   { path: 'buy', component: BuyPageComponent },
   { path: 'stats/:id', component: HomePageComponent },
@@ -38,7 +40,8 @@ const appRoutes: Routes = [
     HomePageComponent,
     MeterPageComponent,
     BuyPageComponent,
-    SentPageComponent
+    SentPageComponent,
+    MeterSimulationComponent
   ],
   providers: [SimpliwaterService, CalculationService],
   bootstrap: [AppComponent]
